@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison de Style · 4K Lookbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf7f2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Premium Card Layout */
+        .premium-container {
+            max-width: 1800px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 60px 120px -40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Magazine-style header */
+        .editorial-header {
+            background: #ffffff;
+            padding: 2rem 3rem;
+            border-bottom: 1px solid #eae5de;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4b68a;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+
+        .logo-text span {
+            color: #d4b68a;
+            font-weight: 400;
+        }
+
+        .editorial-tagline {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8b8b8b;
+            border-left: 2px solid #d4b68a;
+            padding-left: 1.5rem;
+        }
+
+        .mood-indicator {
+            display: flex;
+            gap: 2rem;
+            background: #f8f5f0;
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+        }
+
+        .mood-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a4a4a;
+            font-size: 0.9rem;
+        }
+
+        .mood-item i {
+            color: #d4b68a;
+        }
+
+        /* Main layout - two column magazine style */
+        .magazine-layout {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background: #ffffff;
+        }
+
+        /* Left panel - Editorial sidebar */
+        .editorial-sidebar {
+            flex: 1 1 400px;
+            padding: 2.5rem;
+            background: #fcfaf7;
+            border-right: 1px solid #eae5de;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title i {
+            color: #d4b68a;
+            font-size: 1.6rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #d4b68a 0%, transparent 100%);
+            margin-left: 1rem;
+        }
+
+        /* Gender selector - premium toggle */
+        .gender-toggle {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: #ffffff;
+            padding: 0.5rem;
+            border-radius: 60px;
+            border: 1px solid #eae5de;
+        }
+
+        .gender-option {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #8b8b8b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .gender-option i {
+            font-size: 1.2rem;
+        }
+
+        .gender-option.active {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .gender-option.active i {
+            color: #d4b68a;
+        }
+
+        /* Skin tone selector - refined */
+        .skin-profile {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #eae5de;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.1);
+        }
+
+        .profile-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d4b68a;
+            margin-bottom: 1rem;
+        }
+
+        .skin-tone-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .skin-tone-card {
+            text-align: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skin-tone-card:hover {
+            background: #f8f5f0;
+        }
+
+        .skin-tone-card.active {
+            background: #f8f5f0;
+        }
+
+        .skin-swatch {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px -8px rgba(0,0,0,0.2);
+        }
+
+        .skin-tone-card.active .skin-swatch {
+            border-color: #d4b68a;
+            transform: scale(1.05);
+        }
+
+        .skin-tone-card span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #4a4a4a;
+        }
+
+        .celebrity-name {
+            font-size: 0.7rem;
+            color: #d4b68a;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* Style Aesthetics - magazine spread */
+        .aesthetics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .aesthetic-card {
+            background: #ffffff;
+            border: 1px solid #eae5de;
+            border-radius: 24px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .aesthetic-card:hover {
+            border-color: #d4b68a;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.2);
+        }
+
+        .aesthetic-card.active {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        .aesthetic-card i {
+            font-size: 2rem;
+            color: #d4b68a;
+            margin-bottom: 0.8rem;
+        }
+
+        .aesthetic-card span {
+            display: block;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .aesthetic-card small {
+            font-size: 0.7rem;
+            color: #8b8b8b;
+        }
+
+        .aesthetic-card.active span,
+        .aesthetic-card.active small {
+            color: #ffffff;
+        }
+
+        /* Premium select elements */
+        .premium-select {
+            background: #ffffff;
+            border: 1px solid #eae5de;
+            border-radius: 20px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            color: #1a1a1a;
+            width: 100%;
+            margin: 0.5rem 0 1rem;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4b68a" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1.5rem center;
+        }
+
+        .premium-select:focus {
+            border-color: #d4b68a;
+            box-shadow: 0 0 0 4px rgba(212,182,138,0.1);
+        }
+
+        /* Primary CTA */
+        .btn-primary {
+            background: #1a1a1a;
+            border: none;
+            border-radius: 40px;
+            padding: 1.2rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #1a1a1a;
+            margin: 2rem 0;
+        }
+
+        .btn-primary:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .btn-primary:hover i {
+            color: #d4b68a;
+        }
+
+        .btn-primary i {
+            color: #d4b68a;
+            transition: all 0.3s ease;
+        }
+
+        /* Right panel - Main content area */
+        .editorial-content {
+            flex: 2 1 800px;
+            padding: 2.5rem;
+            background: #ffffff;
+        }
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .content-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .content-title span {
+            color: #d4b68a;
+            font-weight: 400;
+        }
+
+        .content-badge {
+            background: #f8f5f0;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #4a4a4a;
+            border: 1px solid #eae5de;
+        }
+
+        /* 4K Lookbook Grid */
+        .lookbook-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .lookbook-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .resolution-badge {
+            background: #1a1a1a;
+            color: #d4b68a;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid #d4b68a;
+        }
+
+        .resolution-badge i {
+            margin-right: 0.5rem;
+        }
+
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 4K Clothing Card */
+        .clothing-card {
+            background: #ffffff;
+            border: 1px solid #eae5de;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .clothing-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4b68a;
+            box-shadow: 0 30px 50px -30px rgba(0,0,0,0.3);
+        }
+
+        .clothing-card.selected {
+            border: 2px solid #d4b68a;
+            box-shadow: 0 0 0 4px rgba(212,182,138,0.2);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            background: #f8f5f0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .clothing-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .clothing-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            color: white;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .clothing-card:hover .overlay-content {
+            transform: translateY(0);
+        }
+
+        .overlay-content .category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
+        }
+
+        .overlay-content .name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .card-details {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-details .info h4 {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-details .info .category {
+            font-size: 0.7rem;
+            color: #8b8b8b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .color-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .color-name {
+            font-size: 0.8rem;
+            color: #4a4a4a;
+            text-transform: capitalize;
+        }
+
+        /* 4K Featured Image */
+        .featured-section {
+            margin-top: 3rem;
+            border-top: 1px solid #eae5de;
+            padding-top: 2rem;
+        }
+
+        .featured-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .featured-title span {
+            color: #d4b68a;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .featured-item {
+            background: #f8f5f0;
+            border-radius: 24px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #eae5de;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .featured-item h5 {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .featured-item p {
+            font-size: 0.8rem;
+            color: #8b8b8b;
+        }
+
+        /* Fabric recommendation card */
+        .fabric-card {
+            background: #f8f5f0;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #eae5de;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .fabric-icon {
+            width: 48px;
+            height: 48px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4b68a;
+            font-size: 1.4rem;
+        }
+
+        .fabric-text {
+            flex: 1;
+        }
+
+        .fabric-text strong {
+            color: #1a1a1a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .fabric-text span {
+            color: #4a4a4a;
+            font-size: 0.9rem;
+        }
+
+        /* Style tags */
+        .style-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .style-tag {
+            background: #f8f5f0;
+            border: 1px solid #eae5de;
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            color: #4a4a4a;
+        }
+
+        .footnote {
+            font-style: italic;
+            color: #8b8b8b;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #eae5de;
+        }
+
+        /* Loading state */
+        .loading-state {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 4rem;
+            color: #d4b68a;
+        }
+
+        .loading-state i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Initial message */
+        .initial-message {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #8b8b8b;
+        }
+
+        .initial-message i {
+            font-size: 4rem;
+            color: #d4b68a;
+            margin-bottom: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .initial-message h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .initial-message p {
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .editorial-sidebar {
+                border-right: none;
+                border-bottom: 1px solid #eae5de;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .premium-container { border-radius: 32px; }
+            .editorial-header { padding: 1.5rem; }
+            .lookbook-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="premium-container">
+        <!-- Magazine-style header -->
+        <div class="editorial-header">
+            <div class="logo-mark">
+                <div class="logo-icon">
+                    <i class="fas fa-vest"></i>
+                </div>
+                <div class="logo-text">MAISON <span>DE STYLE</span></div>
+            </div>
+            <div class="editorial-tagline">
+                4K LOOKBOOK STUDIO
+            </div>
+            <div class="mood-indicator">
+                <div class="mood-item">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weatherDisplay">18°C · mild</span>
+                </div>
+                <div class="mood-item">
+                    <i class="fas fa-palette"></i>
+                    <span id="seasonDisplay">autumn</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main magazine layout -->
+        <div class="magazine-layout">
+            <!-- Left editorial sidebar -->
+            <div class="editorial-sidebar">
+                <div class="section-title">
+                    <i class="fas fa-user-circle"></i> YOUR PROFILE
+                </div>
+                
+                <!-- Gender toggle -->
+                <div class="gender-toggle">
+                    <div class="gender-option active" id="genderMale" data-gender="male">
+                        <i class="fas fa-mars"></i> MALE
+                    </div>
+                    <div class="gender-option" id="genderFemale" data-gender="female">
+                        <i class="fas fa-venus"></i> FEMALE
+                    </div>
+                </div>
+
+                <!-- Skin profile -->
+                <div class="skin-profile">
+                    <div class="profile-label">SKIN TONE</div>
+                    <div class="skin-tone-grid" id="skinToneGrid">
+                        <div class="skin-tone-card active" data-skin="fair">
+                            <div class="skin-swatch" style="background: #F5E6D3;"></div>
+                            <span>Fair</span>
+                            <div class="celebrity-name">Emma Stone</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="light">
+                            <div class="skin-swatch" style="background: #E8D5B5;"></div>
+                            <span>Light</span>
+                            <div class="celebrity-name">Scarlett J.</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="olive">
+                            <div class="skin-swatch" style="background: #C9B28B;"></div>
+                            <span>Olive</span>
+                            <div class="celebrity-name">Penélope C.</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="tan">
+                            <div class="skin-swatch" style="background: #B99A6F;"></div>
+                            <span>Tan</span>
+                            <div class="celebrity-name">Jessica Alba</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="medium">
+                            <div class="skin-swatch" style="background: #A07E5C;"></div>
+                            <span>Medium</span>
+                            <div class="celebrity-name">Kerry W.</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="deep">
+                            <div class="skin-swatch" style="background: #7A5A3A;"></div>
+                            <span>Deep</span>
+                            <div class="celebrity-name">Viola Davis</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="rich">
+                            <div class="skin-swatch" style="background: #5D3F2A;"></div>
+                            <span>Rich</span>
+                            <div class="celebrity-name">Lupita N.</div>
+                        </div>
+                        <div class="skin-tone-card" data-skin="ebony">
+                            <div class="skin-swatch" style="background: #3E2C1A;"></div>
+                            <span>Ebony</span>
+                            <div class="celebrity-name">Alek Wek</div>
+                        </div>
+                    </div>
+
+                    <div class="profile-label" style="margin-top: 1.5rem;">SKIN TYPE</div>
+                    <select class="premium-select" id="skinTypeSelect">
+                        <option value="normal">Normal · Balanced</option>
+                        <option value="dry">Dry · Needs hydration</option>
+                        <option value="oily">Oily · Breathable fabrics</option>
+                        <option value="sensitive">Sensitive · Gentle materials</option>
+                        <option value="combination">Combination · Adaptive</option>
+                    </select>
+                </div>
+
+                <div class="section-title">
+                    <i class="fas fa-tshirt"></i> AESTHETIC
+                </div>
+
+                <!-- Aesthetics grid -->
+                <div class="aesthetics-grid" id="aestheticsGrid">
+                    <div class="aesthetic-card active" data-aesthetic="old-money">
+                        <i class="fas fa-crown"></i>
+                        <span>Old Money</span>
+                        <small>Quiet luxury</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="star-boy">
+                        <i class="fas fa-star"></i>
+                        <span>Star Boy</span>
+                        <small>Celebrity</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="streetwear">
+                        <i class="fas fa-city"></i>
+                        <span>Streetwear</span>
+                        <small>Urban</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="minimalist">
+                        <i class="fas fa-circle"></i>
+                        <span>Minimalist</span>
+                        <small>Clean</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="boho">
+                        <i class="fas fa-feather"></i>
+                        <span>Boho</span>
+                        <small>Free spirit</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="preppy">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Preppy</span>
+                        <small>Ivy League</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="dark-academia">
+                        <i class="fas fa-book-skull"></i>
+                        <span>Dark Academia</span>
+                        <small>Scholarly</small>
+                    </div>
+                    <div class="aesthetic-card" data-aesthetic="athleisure">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Athleisure</span>
+                        <small>Sporty</small>
+                    </div>
+                </div>
+
+                <!-- Occasion and weather -->
+                <div class="section-title" style="margin-top: 2rem;">
+                    <i class="fas fa-calendar"></i> OCCASION
+                </div>
+
+                <select class="premium-select" id="occasionSelect">
+                    <option value="business meeting">💼 Business Meeting</option>
+                    <option value="date night">❤️ Date Night</option>
+                    <option value="casual weekend">🌿 Casual Weekend</option>
+                    <option value="garden party">🌸 Garden Party</option>
+                    <option value="formal gala">✨ Formal Gala</option>
+                    <option value="night out">🌃 Night Out</option>
+                    <option value="college">📚 College</option>
+                    <option value="workout">💪 Workout</option>
+                </select>
+
+                <select class="premium-select" id="weatherSelect">
+                    <option value="mild spring">🌸 Mild Spring</option>
+                    <option value="chilly autumn" selected>🍂 Chilly Autumn</option>
+                    <option value="hot summer">☀️ Hot Summer</option>
+                    <option value="cold winter">❄️ Cold Winter</option>
+                    <option value="rainy">☔ Rainy</option>
+                </select>
+
+                <!-- Generate button -->
+                <button class="btn-primary" id="generateBtn">
+                    <i class="fas fa-magic"></i>
+                    GENERATE 4K LOOKBOOK
+                </button>
+
+                <div style="font-size: 0.7rem; color: #8b8b8b; text-align: center;">
+                    <i class="fas fa-circle" style="color: #d4b68a; font-size: 0.4rem;"></i>  4K Ultra HD · Real clothing photography
+                </div>
+            </div>
+
+            <!-- Right editorial content -->
+            <div class="editorial-content" id="resultPanel">
+                <div class="content-header">
+                    <h2 class="content-title">4K <span>LOOKBOOK</span></h2>
+                    <div class="content-badge" id="activeProfileBadge">
+                        <i class="fas fa-user"></i> Fair · Normal
+                    </div>
+                </div>
+
+                <!-- Outfit display area -->
+                <div id="outfitContainer">
+                    <!-- Initial message -->
+                    <div id="initialMessage" class="initial-message">
+                        <i class="fas fa-image"></i>
+                        <h3>4K Fashion Studio</h3>
+                        <p>Select your preferences and generate a curated collection of ultra-high resolution clothing images, tailored to your style aesthetic.</p>
+                    </div>
+
+                    <!-- Loaded content (hidden initially) -->
+                    <div id="outfitContent" style="display: none;">
+                        <!-- Lookbook header -->
+                        <div class="lookbook-header">
+                            <h3 id="lookbookTitle">The Executive Collection</h3>
+                            <div class="resolution-badge">
+                                <i class="fas fa-tv"></i> 4K ULTRA HD
+                            </div>
+                        </div>
+
+                        <!-- Main 4K clothing grid -->
+                        <div class="lookbook-grid" id="clothingGrid"></div>
+
+                        <!-- Featured pieces -->
+                        <div class="featured-section">
+                            <div class="featured-title">
+                                <i class="fas fa-star" style="color: #d4b68a;"></i>
+                                KEY <span>PIECES</span>
+                            </div>
+                            <div class="featured-grid" id="featuredGrid"></div>
+                        </div>
+
+                        <!-- Fabric recommendation -->
+                        <div class="fabric-card" id="fabricCard">
+                            <div class="fabric-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <div class="fabric-text">
+                                <strong>Fabric recommendations for your skin type</strong>
+                                <span id="fabricText">Cotton, silk, bamboo · Gentle and breathable</span>
+                            </div>
+                        </div>
+
+                        <!-- Styling note -->
+                        <div class="footnote" id="stylingNote">
+                            <i class="fas fa-lightbulb" style="color: #d4b68a; margin-right: 0.5rem;"></i>
+                            <span id="footnoteText">Complete the look with minimal accessories</span>
+                        </div>
+                    </div>
+
+                    <!-- Loading state -->
+                    <div id="loadingSpinner" class="loading-state">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span>Rendering 4K images...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // DOM Elements
+            const occasionEl = document.getElementById('occasionSelect');
+            const weatherEl = document.getElementById('weatherSelect');
+            const skinTypeSelect = document.getElementById('skinTypeSelect');
+            const genderMale = document.getElementById('genderMale');
+            const genderFemale = document.getElementById('genderFemale');
+            const skinToneCards = document.querySelectorAll('.skin-tone-card');
+            const aestheticCards = document.querySelectorAll('.aesthetic-card');
+            const generateBtn = document.getElementById('generateBtn');
+            const initialMessage = document.getElementById('initialMessage');
+            const outfitContent = document.getElementById('outfitContent');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const clothingGrid = document.getElementById('clothingGrid');
+            const featuredGrid = document.getElementById('featuredGrid');
+            const activeProfileBadge = document.getElementById('activeProfileBadge');
+            const lookbookTitle = document.getElementById('lookbookTitle');
+            const fabricText = document.getElementById('fabricText');
+            const footnoteText = document.getElementById('footnoteText');
+            
+            const weatherDisplay = document.getElementById('weatherDisplay');
+            const seasonDisplay = document.getElementById('seasonDisplay');
+
+            // State
+            let selectedGender = 'male';
+            let selectedSkinTone = 'fair';
+            let selectedSkinType = 'normal';
+            let selectedAesthetic = 'old-money';
+
+            // Skin tone colors
+            const skinToneColors = {
+                'fair': '#F5E6D3',
+                'light': '#E8D5B5',
+                'olive': '#C9B28B',
+                'tan': '#B99A6F',
+                'medium': '#A07E5C',
+                'deep': '#7A5A3A',
+                'rich': '#5D3F2A',
+                'ebony': '#3E2C1A'
+            };
+
+            // High-resolution fashion images (4K quality from Unsplash) - FIXED with real trouser images
+            const fashionImages = {
+                // Tops & Blazers
+                'Navy Wool Blazer': 'https://images.unsplash.com/photo-1598033129078-5a6f54e7e3e0?w=1200&q=90',
+                'White Oxford Shirt': 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=1200&q=90',
+                'Black Silk Shirt': 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=1200&q=90',
+                'Olive Hoodie': 'https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=1200&q=90',
+                'Tweed Blazer': 'https://images.unsplash.com/photo-1593030761751-d71a3d2f2f6c?w=1200&q=90',
+                'Turtleneck Sweater': 'https://images.unsplash.com/photo-1576565409179-82a6b8a6d60d?w=1200&q=90',
+                'Black T-Shirt': 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&q=90',
+                'Pink Polo Shirt': 'https://images.unsplash.com/photo-1598033129078-5a6f54e7e3e0?w=1200&q=90',
+                'Ivory Silk Blouse': 'https://images.unsplash.com/photo-1608830524346-25d6f78b6f8f?w=1200&q=90',
+                'Metallic Mini Dress': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&q=90',
+                'Oversized T-Shirt': 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&q=90',
+                'Pink Dress': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&q=90',
+                'White Blouse': 'https://images.unsplash.com/photo-1608830524346-25d6f78b6f8f?w=1200&q=90',
+                'Black Leather Jacket': 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=1200&q=90',
+                'Navy Blazer': 'https://images.unsplash.com/photo-1598033129078-5a6f54e7e3e0?w=1200&q=90',
+                'Cashmere Sweater': 'https://images.unsplash.com/photo-1576565409179-82a6b8a6d60d?w=1200&q=90',
+                
+                // REAL TROUSERS - Fixed with actual trouser images (no video game)
+                'Charcoal Trousers': 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=1200&q=90',
+                'Grey Trousers': 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=1200&q=90',
+                'Pleated Trousers': 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=1200&q=90',
+                'Black Trousers': 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=1200&q=90',
+                'Khaki Chinos': 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1200&q=90',
+                'Beige Trousers': 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1200&q=90',
+                'Navy Trousers': 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=1200&q=90',
+                
+                // Other Bottoms
+                'Black Jeans': 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=1200&q=90',
+                'Black Cargo Pants': 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=1200&q=90',
+                'Charcoal Skirt': 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=1200&q=90',
+                'Bike Shorts': 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=1200&q=90',
+                'Black Wide-Leg Pants': 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=1200&q=90',
+                'Plaid Skirt': 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=1200&q=90',
+                
+                // Shoes
+                'Brown Leather Oxfords': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Black Chelsea Boots': 'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=1200&q=90',
+                'White Sneakers': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Oxford Shoes': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Boat Shoes': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Nude Pumps': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Silver Heels': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Chunky Sneakers': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Oxford Heels': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Espadrilles': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                'Black Heels': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=90',
+                
+                // Accessories
+                'Burgundy Silk Tie': 'https://images.unsplash.com/photo-1589756823695-278bc923f962?w=1200&q=90',
+                'Silver Watch': 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&q=90',
+                'Gold Watch': 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&q=90',
+                'Silver Chain Necklace': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=90',
+                'Designer Sunglasses': 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=1200&q=90',
+                'Snapback Cap': 'https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=1200&q=90',
+                'Crossbody Bag': 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&q=90',
+                'Leather Satchel': 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&q=90',
+                'Canvas Belt': 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=90',
+                'Pearl Earrings': 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=90',
+                'Statement Earrings': 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=90',
+                'Silver Bracelet': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=90',
+                'Knee-High Socks': 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=1200&q=90',
+                'Vintage Brooch': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=90',
+                'Pearl Necklace': 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=90',
+                'Steel Watch': 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&q=90',
+                'Leather Tote': 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&q=90',
+                'Structured Tote': 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&q=90',
+                'Chain Bag': 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1200&q=90',
+                'Ray-Ban Sunglasses': 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=1200&q=90',
+                'Silver Chains': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=90',
+                'Baseball Cap': 'https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=1200&q=90',
+                'Mini Backpack': 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=90',
+                'Straw Bag': 'https://images.unsplash.com/photo-1591561954555-607968c989ab?w=1200&q=90'
+            };
+
+            // Default image
+            const defaultImage = 'https://images.unsplash.com/photo-1598033129078-5a6f54e7e3e0?w=1200&q=90';
+
+            // Fabric recommendations
+            const fabricBySkinType = {
+                'normal': 'Cotton, silk, linen, wool, cashmere · Ideal for all fabric types',
+                'dry': 'Cashmere, silk, bamboo, modal · Soft, hydrating fabrics that won\'t irritate',
+                'oily': 'Cotton, linen, hemp · Breathable natural fibers for comfort',
+                'sensitive': 'Organic cotton, bamboo, modal, silk · Hypoallergenic and ultra-soft',
+                'combination': 'Breathable blends, cotton, bamboo · Fabrics that adapt to your skin'
+            };
+
+            // Update weather display
+            function updateWeatherDisplay() {
+                const weather = weatherEl.value;
+                if (weather.includes('chilly')) {
+                    weatherDisplay.textContent = '12°C · Chilly';
+                    seasonDisplay.textContent = 'Autumn';
+                } else if (weather.includes('cold')) {
+                    weatherDisplay.textContent = '2°C · Cold';
+                    seasonDisplay.textContent = 'Winter';
+                } else if (weather.includes('hot')) {
+                    weatherDisplay.textContent = '28°C · Hot';
+                    seasonDisplay.textContent = 'Summer';
+                } else if (weather.includes('rainy')) {
+                    weatherDisplay.textContent = '15°C · Rainy';
+                    seasonDisplay.textContent = 'Wet';
+                } else {
+                    weatherDisplay.textContent = '18°C · Mild';
+                    seasonDisplay.textContent = 'Spring';
+                }
+            }
+
+            weatherEl.addEventListener('change', updateWeatherDisplay);
+            occasionEl.addEventListener('change', updateWeatherDisplay);
+            updateWeatherDisplay();
+
+            // Gender selection
+            genderMale.addEventListener('click', () => {
+                genderMale.classList.add('active');
+                genderFemale.classList.remove('active');
+                selectedGender = 'male';
+            });
+            
+            genderFemale.addEventListener('click', () => {
+                genderFemale.classList.add('active');
+                genderMale.classList.remove('active');
+                selectedGender = 'female';
+            });
+
+            // Skin tone selection
+            skinToneCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    skinToneCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    selectedSkinTone = card.dataset.skin;
+                });
+            });
+
+            // Skin type selection
+            skinTypeSelect.addEventListener('change', (e) => {
+                selectedSkinType = e.target.value;
+            });
+
+            // Aesthetic selection
+            aestheticCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    aestheticCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    selectedAesthetic = card.dataset.aesthetic;
+                });
+            });
+
+            // Color name helper
+            function getColorName(hex) {
+                const colors = {
+                    '#0a1928': 'navy',
+                    '#36454F': 'charcoal',
+                    '#1E1E1E': 'black',
+                    '#2E2E2E': 'grey',
+                    '#808080': 'grey',
+                    '#4A4A4A': 'grey',
+                    '#F5F5DC': 'beige',
+                    '#FFFDD0': 'cream',
+                    '#FFFFFF': 'white',
+                    '#D2B48C': 'tan',
+                    '#C19A6B': 'camel',
+                    '#8B4513': 'brown',
+                    '#556B2F': 'olive',
+                    '#2E8B57': 'green',
+                    '#228B22': 'forest',
+                    '#50C878': 'emerald',
+                    '#008080': 'teal',
+                    '#800020': 'burgundy',
+                    '#B7410E': 'rust',
+                    '#FF4500': 'orange',
+                    '#FF007F': 'fuchsia',
+                    '#FF69B4': 'pink',
+                    '#FFD700': 'gold',
+                    '#C0C0C0': 'silver',
+                    '#4169E1': 'royal',
+                    '#673147': 'purple',
+                    '#E0B0FF': 'dusty rose',
+                    '#1560BD': 'denim',
+                    '#5D3A1A': 'tweed',
+                    '#C3B091': 'khaki'
+                };
+                return colors[hex] || 'custom';
+            }
+
+            // Generate outfit
+            function generateOutfit() {
+                const occasion = occasionEl.value;
+                const gender = selectedGender;
+                const aesthetic = selectedAesthetic;
+                
+                const outfits = {
+                    'old-money': {
+                        male: {
+                            'business meeting': {
+                                title: 'The Executive',
+                                items: [
+                                    { name: 'Navy Wool Blazer', category: 'Outerwear', color: '#0a1928' },
+                                    { name: 'White Oxford Shirt', category: 'Top', color: '#FFFFFF' },
+                                    { name: 'Burgundy Silk Tie', category: 'Accessory', color: '#800020' },
+                                    { name: 'Charcoal Trousers', category: 'Bottoms', color: '#36454F' },
+                                    { name: 'Brown Leather Oxfords', category: 'Shoes', color: '#8B4513' },
+                                    { name: 'Silver Watch', category: 'Accessory', color: '#C0C0C0' }
+                                ],
+                                note: 'Quiet luxury. Each piece speaks of quality and heritage.'
+                            }
+                        },
+                        female: {
+                            'business meeting': {
+                                title: 'The Executive',
+                                items: [
+                                    { name: 'Ivory Silk Blouse', category: 'Top', color: '#FFFDD0' },
+                                    { name: 'Navy Blazer', category: 'Outerwear', color: '#0a1928' },
+                                    { name: 'Charcoal Skirt', category: 'Bottoms', color: '#36454F' },
+                                    { name: 'Nude Pumps', category: 'Shoes', color: '#D2B48C' },
+                                    { name: 'Pearl Earrings', category: 'Accessory', color: '#F0E5D8' },
+                                    { name: 'Gold Watch', category: 'Accessory', color: '#FFD700' }
+                                ],
+                                note: 'Powerful femininity. Investment pieces that command respect.'
+                            }
+                        }
+                    },
+                    'star-boy': {
+                        male: {
+                            'night out': {
+                                title: 'The Icon',
+                                items: [
+                                    { name: 'Black Leather Jacket', category: 'Outerwear', color: '#1E1E1E' },
+                                    { name: 'Black Silk Shirt', category: 'Top', color: '#1E1E1E' },
+                                    { name: 'Silver Chain Necklace', category: 'Accessory', color: '#C0C0C0' },
+                                    { name: 'Black Jeans', category: 'Bottoms', color: '#1E1E1E' },
+                                    { name: 'Black Chelsea Boots', category: 'Shoes', color: '#1E1E1E' },
+                                    { name: 'Designer Sunglasses', category: 'Accessory', color: '#1E1E1E' }
+                                ],
+                                note: 'Born for the spotlight. Head-turning confidence.'
+                            }
+                        },
+                        female: {
+                            'night out': {
+                                title: 'The It Girl',
+                                items: [
+                                    { name: 'Metallic Mini Dress', category: 'Dress', color: '#C0C0C0' },
+                                    { name: 'Silver Heels', category: 'Shoes', color: '#C0C0C0' },
+                                    { name: 'Chain Bag', category: 'Bag', color: '#C0C0C0' },
+                                    { name: 'Statement Earrings', category: 'Accessory', color: '#FFD700' },
+                                    { name: 'Designer Sunglasses', category: 'Accessory', color: '#1E1E1E' },
+                                    { name: 'Silver Bracelet', category: 'Accessory', color: '#C0C0C0' }
+                                ],
+                                note: 'Celebrity energy. Unforgettable entrance.'
+                            }
+                        }
+                    },
+                    'streetwear': {
+                        male: {
+                            'casual weekend': {
+                                title: 'Urban Legend',
+                                items: [
+                                    { name: 'Olive Hoodie', category: 'Top', color: '#556B2F' },
+                                    { name: 'Black Cargo Pants', category: 'Bottoms', color: '#1E1E1E' },
+                                    { name: 'White Sneakers', category: 'Shoes', color: '#FFFFFF' },
+                                    { name: 'Crossbody Bag', category: 'Bag', color: '#1E1E1E' },
+                                    { name: 'Snapback Cap', category: 'Accessory', color: '#1E1E1E' },
+                                    { name: 'Silver Chain', category: 'Accessory', color: '#C0C0C0' }
+                                ],
+                                note: 'Street credibility meets high fashion. Comfort is key.'
+                            }
+                        },
+                        female: {
+                            'casual weekend': {
+                                title: 'Street Queen',
+                                items: [
+                                    { name: 'Oversized T-Shirt', category: 'Top', color: '#D2B48C' },
+                                    { name: 'Bike Shorts', category: 'Bottoms', color: '#1E1E1E' },
+                                    { name: 'Chunky Sneakers', category: 'Shoes', color: '#FFFFFF' },
+                                    { name: 'Mini Backpack', category: 'Bag', color: '#1E1E1E' },
+                                    { name: 'Silver Chains', category: 'Accessory', color: '#C0C0C0' },
+                                    { name: 'Baseball Cap', category: 'Accessory', color: '#1E1E1E' }
+                                ],
+                                note: 'Effortlessly cool. Mix high and low.'
+                            }
+                        }
+                    },
+                    'dark-academia': {
+                        male: {
+                            'college': {
+                                title: 'The Scholar',
+                                items: [
+                                    { name: 'Tweed Blazer', category: 'Outerwear', color: '#5D3A1A' },
+                                    { name: 'Turtleneck Sweater', category: 'Knitwear', color: '#800020' },
+                                    { name: 'Pleated Trousers', category: 'Bottoms', color: '#36454F' },
+                                    { name: 'Oxford Shoes', category: 'Shoes', color: '#8B4513' },
+                                    { name: 'Leather Satchel', category: 'Bag', color: '#8B4513' },
+                                    { name: 'Vintage Watch', category: 'Accessory', color: '#C0C0C0' }
+                                ],
+                                note: 'Intellectual charm. Dressed for deep conversations.'
+                            }
+                        },
+                        female: {
+                            'college': {
+                                title: 'The Poet',
+                                items: [
+                                    { name: 'Plaid Skirt', category: 'Bottoms', color: '#800020' },
+                                    { name: 'Cashmere Sweater', category: 'Knitwear', color: '#FFFDD0' },
+                                    { name: 'Knee-High Socks', category: 'Accessory', color: '#1E1E1E' },
+                                    { name: 'Oxford Heels', category: 'Shoes', color: '#8B4513' },
+                                    { name: 'Vintage Brooch', category: 'Accessory', color: '#FFD700' },
+                                    { name: 'Leather Satchel', category: 'Bag', color: '#8B4513' }
+                                ],
+                                note: 'Romantic soul. Rainy days and old books.'
+                            }
+                        }
+                    },
+                    'minimalist': {
+                        male: {
+                            'business meeting': {
+                                title: 'The Minimalist',
+                                items: [
+                                    { name: 'Black T-Shirt', category: 'Top', color: '#1E1E1E' },
+                                    { name: 'Grey Trousers', category: 'Bottoms', color: '#808080' },
+                                    { name: 'White Sneakers', category: 'Shoes', color: '#FFFFFF' },
+                                    { name: 'Steel Watch', category: 'Accessory', color: '#4A4A4A' },
+                                    { name: 'Leather Tote', category: 'Bag', color: '#2E2E2E' }
+                                ],
+                                note: 'Less is more. Perfect fit, impeccable quality.'
+                            }
+                        },
+                        female: {
+                            'business meeting': {
+                                title: 'Clean Lines',
+                                items: [
+                                    { name: 'White Blouse', category: 'Top', color: '#FFFFFF' },
+                                    { name: 'Black Wide-Leg Pants', category: 'Bottoms', color: '#1E1E1E' },
+                                    { name: 'Black Heels', category: 'Shoes', color: '#1E1E1E' },
+                                    { name: 'Gold Watch', category: 'Accessory', color: '#FFD700' },
+                                    { name: 'Structured Tote', category: 'Bag', color: '#1E1E1E' }
+                                ],
+                                note: 'Architectural simplicity. Timeless elegance.'
+                            }
+                        }
+                    },
+                    'preppy': {
+                        male: {
+                            'garden party': {
+                                title: 'Ivy League',
+                                items: [
+                                    { name: 'Pink Polo Shirt', category: 'Top', color: '#FF69B4' },
+                                    { name: 'Khaki Chinos', category: 'Bottoms', color: '#C3B091' },
+                                    { name: 'Boat Shoes', category: 'Shoes', color: '#8B4513' },
+                                    { name: 'Canvas Belt', category: 'Accessory', color: '#D2B48C' },
+                                    { name: 'Ray-Ban Sunglasses', category: 'Accessory', color: '#1E1E1E' }
+                                ],
+                                note: 'Classic American style. Always polished.'
+                            }
+                        },
+                        female: {
+                            'garden party': {
+                                title: 'Prep School',
+                                items: [
+                                    { name: 'Navy Blazer', category: 'Outerwear', color: '#0a1928' },
+                                    { name: 'Pink Dress', category: 'Dress', color: '#FF69B4' },
+                                    { name: 'Pearl Necklace', category: 'Accessory', color: '#F0E5D8' },
+                                    { name: 'Espadrilles', category: 'Shoes', color: '#D2B48C' },
+                                    { name: 'Straw Bag', category: 'Bag', color: '#F5F5DC' }
+                                ],
+                                note: 'Sweet but sophisticated. Perfectly put together.'
+                            }
+                        }
+                    }
+                };
+
+                // Default fallback
+                let outfit = {
+                    title: 'Signature Style',
+                    items: [
+                        { name: 'Navy Wool Blazer', category: 'Outerwear', color: '#0a1928' },
+                        { name: 'White Oxford Shirt', category: 'Top', color: '#FFFFFF' },
+                        { name: 'Charcoal Trousers', category: 'Bottoms', color: '#36454F' },
+                        { name: 'Brown Leather Oxfords', category: 'Shoes', color: '#8B4513' },
+                        { name: 'Silver Watch', category: 'Accessory', color: '#C0C0C0' }
+                    ],
+                    note: 'Timeless elegance for any occasion.'
+                };
+
+                try {
+                    if (outfits[aesthetic] && outfits[aesthetic][gender] && outfits[aesthetic][gender][occasion]) {
+                        outfit = outfits[aesthetic][gender][occasion];
+                    } else {
+                        // Try to find any occasion for this gender/aesthetic
+                        const genderOutfits = outfits[aesthetic]?.[gender];
+                        if (genderOutfits) {
+                            const firstOccasion = Object.keys(genderOutfits)[0];
+                            outfit = genderOutfits[firstOccasion];
+                        }
+                    }
+                } catch (e) {
+                    console.log('Using default outfit');
+                }
+
+                return outfit;
+            }
+
+            // Display outfit
+            function displayOutfit(outfit) {
+                // Update profile badge
+                const skinToneName = document.querySelector('.skin-tone-card.active span').textContent;
+                const skinTypeName = skinTypeSelect.options[skinTypeSelect.selectedIndex].text.split(' · ')[0];
+                activeProfileBadge.innerHTML = `<i class="fas fa-user"></i> ${skinToneName} · ${skinTypeName}`;
+
+                // Update title
+                lookbookTitle.textContent = outfit.title + ' Collection';
+
+                // Generate main clothing grid
+                clothingGrid.innerHTML = outfit.items.map((item, index) => {
+                    const imageUrl = fashionImages[item.name] || defaultImage;
+                    return `
+                        <div class="clothing-card" data-index="${index}">
+                            <div class="image-container">
+                                <img src="${imageUrl}" alt="${item.name}" loading="lazy">
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <div class="category">${item.category}</div>
+                                        <div class="name">${item.name}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-details">
+                                <div class="info">
+                                    <h4>${item.name}</h4>
+                                    <div class="category">${item.category}</div>
+                                </div>
+                                <div class="color-indicator">
+                                    <span class="color-dot" style="background-color: ${item.color};"></span>
+                                    <span class="color-name">${getColorName(item.color)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Generate featured pieces (first 3 items)
+                const featuredItems = outfit.items.slice(0, 3);
+                featuredGrid.innerHTML = featuredItems.map(item => {
+                    const imageUrl = fashionImages[item.name] || defaultImage;
+                    return `
+                        <div class="featured-item">
+                            <img src="${imageUrl}" alt="${item.name}" loading="lazy">
+                            <h5>${item.name}</h5>
+                            <p>${item.category} · ${getColorName(item.color)}</p>
+                        </div>
+                    `;
+                }).join('');
+
+                // Update fabric recommendation
+                fabricText.textContent = fabricBySkinType[selectedSkinType] || fabricBySkinType.normal;
+
+                // Update styling note
+                footnoteText.textContent = outfit.note;
+
+                // Show content
+                initialMessage.style.display = 'none';
+                outfitContent.style.display = 'block';
+            }
+
+            // Generate button click
+            generateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                initialMessage.style.display = 'none';
+                outfitContent.style.display = 'none';
+                loadingSpinner.style.display = 'flex';
+
+                setTimeout(() => {
+                    const outfit = generateOutfit();
+                    displayOutfit(outfit);
+                    loadingSpinner.style.display = 'none';
+                }, 1800);
+            });
+        })();
+    </script>
+</body>
+</html>
